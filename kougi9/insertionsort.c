@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-  //ソートする配列。ランダムに与えられる
-  int a[] = {42, 41, 88, 63, 59, 41, 17};
+  //ソートする配列。個数、値ともにランダム
+  int a[] = {4, 42, 41, 88, 54, 23, 53, 78, 723, 3443, 63, 59, 41, 17};
   int buf;
 
   unsigned int arraySize = sizeof(a) / sizeof(a[0]);
@@ -23,6 +23,7 @@ int main(void) {
         }
         // ずらし終わったら、元のa[i]の値をa[j]に挿入
         a[j] = buf;
+        break;  //挿入したら、a[i]の挿入場所はそれ以降調べない
       }
     }
   }
