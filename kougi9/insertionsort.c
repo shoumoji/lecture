@@ -22,9 +22,7 @@ int main(void) {
           a[k] = a[k - 1];
         }
         // ずらし終わったら、元のa[i]の値をa[j]に挿入
-        for (k = i; k > j; k--) {
-          a[j] = buf;
-        }
+        a[j] = buf;
       }
     }
   }
