@@ -41,13 +41,19 @@ int main(void) {
 }
 
 void outArrayTrace() {
+  int l;
   if (count == 0) {
-    printf("与えられた配列: A[] = {%d", A[0]);
+    for (l = 0; l < arraySize; l++) {
+      printf(",A[%d]", l);
+    }
+    printf("\n初期配列");
+    for (l = 0; l < arraySize; l++) {
+      printf(",%d", A[l]);
+    }
   } else {
-    printf("%d回目: A[] = {%d", count, A[0]);
+    printf("\n%d回目", count);
+    for (l = 0; l < arraySize; l++) {
+      printf("%d", A[l]);
+    }
   }
-  for (int l = 1; l < arraySize; l++) {
-    printf(", %d", A[l]);
-  }
-  printf("}\n");
 }
