@@ -44,6 +44,7 @@ void outArrayTrace() {
   int l;
   FILE *file;
 
+  // １回目は特殊な１行目と初期配列の出力
   if (count == 0) {
     file = fopen("trace.csv", "w");
     for (l = 0; l < arraySize; l++) {
@@ -54,6 +55,8 @@ void outArrayTrace() {
       fprintf(file, ",%d", A[l]);
     }
     fclose(file);
+
+    // 2回目以降はファイルに１行ずつ追記
   } else {
     file = fopen("trace.csv", "a");
     fprintf(file, "\n%d回目", count);
@@ -63,3 +66,4 @@ void outArrayTrace() {
     fclose(file);
   }
 }
+
