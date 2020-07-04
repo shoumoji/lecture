@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void) {
+  //ソートする配列。ランダムに与えられる
+  int a[] = {4, 2, 8, 3, 9, 1, 7};
+  int buf;
+
+  unsigned int arraySize = sizeof(a) / sizeof(a[0]);
+
+  // iは挿入を検討している数の配列のための変数
+  // jは比較する配列のための変数
+  int i, j, k;
+  for (i = 1; i < arraySize; i++) {
+    for (j = 0; j < arraySize; j++) {
+      // 挿入する値を左から見ていき、
+      // その値より大きいものを見つけたら、
+      // そこに代入し、それ以降から挿入する配列のiの場所まで１ずつずらす
+      if (a[i] < a[j]) {
+        buf = a[i];
+        for (k = i; k > j; k--) {
+          a[k] = a[k - 1];
+        }
+        a[j] = buf;
+      }
+    }
+  }
+
+  //出力部分
+  for (int l = 0; l < arraySize; l++) {
+    printf("a[%d]=%d", l, a[l]);
+  }
+}
