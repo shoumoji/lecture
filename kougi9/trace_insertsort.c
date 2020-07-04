@@ -55,9 +55,9 @@ void outArrayTrace() {
       fprintf(file, ",%d", A[l]);
     }
     fclose(file);
-
-    // 2回目以降はファイルに１行ずつ追記
-  } else {
+  }
+  // 2回目以降はファイルに１行ずつ追記
+  else {
     file = fopen("trace.csv", "a");
     fprintf(file, "\n%d回目", count);
     for (l = 0; l < arraySize; l++) {
