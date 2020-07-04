@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void outArrayTrace();
+void outArrayTrace(void);
 
 //ソートする配列。個数、値ともにランダム
 int A[] = {5, 2, 10, 3};
@@ -40,7 +40,7 @@ int main(void) {
   }
 }
 
-void outArrayTrace() {
+void outArrayTrace(void) {
   int l;
   FILE *file;
 
