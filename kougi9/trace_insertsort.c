@@ -42,18 +42,24 @@ int main(void) {
 
 void outArrayTrace() {
   int l;
+  FILE *file;
+
   if (count == 0) {
+    file = fopen("trace.csv", "w");
     for (l = 0; l < arraySize; l++) {
-      printf(",A[%d]", l);
+      fprintf(file, ",A[%d]", l);
     }
-    printf("\n初期配列");
+    fprintf(file, "\n初期配列");
     for (l = 0; l < arraySize; l++) {
-      printf(",%d", A[l]);
+      fprintf(file, ",%d", A[l]);
     }
+    fclose(file);
   } else {
-    printf("\n%d回目", count);
+    file = fopen("trace.csv", "a");
+    fprintf(file, "\n%d回目", count);
     for (l = 0; l < arraySize; l++) {
-      printf("%d", A[l]);
+      fprintf(file, ",%d", A[l]);
     }
+    fclose(file);
   }
 }
