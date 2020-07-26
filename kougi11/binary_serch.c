@@ -14,16 +14,12 @@ int main(void) {
   int TARGET = 1;
 
   while (lo < hi) {
-    // hi-loの結果を四捨五入
-    int k = ((float)(hi) + (float)lo) / 2;
+    int k = (hi + lo) / 2;
 
-    printf("k = %d, A[k] = %d, found = %d, hi = %d, lo = %d\n", k, A[k], found,
-           hi, lo);
+    printf("found = %d, k = %d, hi = %d, lo = %d\n", found, k, hi, lo);
 
     if (A[k] == TARGET) {
       found = true;
-      printf("k = %d, A[k] = %d, found = %d, hi = %d, lo = %d\n", k, A[k],
-             found, hi, lo);
       printf("TARGETが存在します");
       exit(0);
     } else if (A[k] > TARGET) {
