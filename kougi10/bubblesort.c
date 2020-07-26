@@ -54,3 +54,4 @@ void outArrayTrace() {
     fclose(file);
   }
 }
+
