@@ -7,11 +7,11 @@ double calc_volume(double l, double w, double h);
 int main(void) {
   double length, width, height, surface, volume;
 
-  printf("長さ(cm)を入力してください。¥n");
+  printf("長さ(cm)を入力してください。\n");
   scanf("%lf", &length);
-  printf("幅(cm)を入力してください。¥n");
+  printf("幅(cm)を入力してください。\n");
   scanf("%lf", &width);
-  printf("高さ(cm)を入力してください。¥n");
+  printf("高さ(cm)を入力してください。\n");
   scanf("%lf", &height);
 
   output_print(length, width, height);
